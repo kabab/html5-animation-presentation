@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <script src='../slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      <article>
+        <h1>
+            Hour of Code
+          <br>
+          FTSM
+        </h1>
+        <p>
+          Amine KABAB
+          <br>
+          Club Robotique
+        </p>
+        <p>
+            <a style="font-size:20px;">aminekabab.me</a>
+        </p>
+      </article>
+      
+      <article>
+        <q>
+            Everybody in this country should learn how to program a computer…
+            <b>because it teaches you how to think.</b>
+        </q>
+        <div class='author'>
+            Steve Jobs
+        </div>
+      </article>
+
+      <article>
+        <h1>Animation HTML5</h1>
+      </article>
+
+      <article>
+        <h3>
+          Canvas
+        </h3>
+        <ul class="build">
+            <li>
+                &lt;canvas&gt;&lt;/canvas&gt; is an HTML5 element used to draw graphics, on the fly, via scriptint
+            </li>
+            <li>
+                The <b>canvas</b> element has no drawing abilities of its own (it is only a container for graphics) - you must use a script to actually draw the graphics.
+            </li>
+            <li>
+            It can, for instance, be used to draw graphs, make photo compositions or do simple (and not so simple) animations.
+            </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+            <b>canvas</b> attributes
+        </h3>
+        <ul class="build">
+            <li>
+                <b>canvas</b> element has only two attributes - width and height.
+                These are both optional and can also be set using DOM properties. 
+                When no width and height attributes are specified, the canvas will initially be 300 pixels wide and 150 pixels high.
+            </li>
+            <li>Canvas can be styled by CSS, but the graphics inside the canvas will not be affected. Without any javascript, canvas is a transparent element.
+            </li>
+            <li>
+<pre style="height:100px;">
+&lt;canvas id="some-canvas" width="150" height="150"&gt;Fallback content
+&lt;/canvas&gt;
+</pre>
+            </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+        The grid
+        </h3>
+            <p>
+                <img class="centered" width="400" src="images/Canvas_default_grid.png">
+            </p>
+        </article>
+
+      <article class='smaller'>
+        <h3>
+          Drawing rectangles
+        </h3>
+        <div class="build">
+            <p>fillRect(x, y, width, height)</p>
+            <p>strokeRect(x, y, width, height)</p>
+            <p>
+                <canvas id="rect" width="400" height="300"></canvas>
+                <script>
+                    (function() {
+                        var ctx = document.getElementById("rect").getContext("2d");
+                        ctx.strokeRect(0, 0, 400, 300);
+                        ctx.fillRect(5,5, 100, 100);
+                        ctx.strokeRect(110, 110, 100, 100);
+                    })();
+                </script>
+            </p>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+            Drawing paths
+        </h3>
+        <div class="build">
+            <p>beginPath()</p>
+            <p>moveTo(x, y)</p>
+            <p>lineTo(x, y)</p>
+            <p>stroke()</p>
+            <p>fill()</p>
+            <p>
+                <canvas id="path" width="400" height="300"></canvas>
+                <script>
+                    (function() {
+                        var ctx = document.getElementById("path").getContext("2d");
+                        ctx.beginPath();
+                        ctx.moveTo(5, 5);
+                        ctx.lineTo(60, 60);
+                        ctx.moveTo(100, 0);
+                        ctx.lineTo(200, 100);
+                        ctx.lineTo(100, 100);
+                        ctx.stroke();
+                        
+                        ctx.fillStyle = "yellow";
+                        ctx.beginPath();
+                        ctx.moveTo(110, 50);
+                        ctx.lineTo(210, 0);
+                        ctx.lineTo(210, 100);
+                        ctx.fill();
+                              
+                    })();
+                </script>
+            </p>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Arcs
+        </h3>
+        <div>
+          <p>arc(x, y, radius, startAngle, endAngle, anticlockwise)</p>
+          <p>
+            
+            <canvas id="arc" width="400" height="300"></canvas>
+            <script>
+                (function() {
+                    var ctx = document.getElementById("arc").getContext("2d");
+                    ctx.beginPath();
+                    ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+                    ctx.moveTo(110,75);
+                    ctx.arc(75,75,35,0,Math.PI,false);   // Mouth (clockwise)
+                    ctx.moveTo(65,65);
+                    ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+                    ctx.moveTo(95,65);
+                    ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+                    ctx.stroke();    
+                })();
+              </script>
+          </p>
+        </div>
+      </article>
+      <article>
+          <h1>Simple Animation</h1>
+      </article>
+
+    </section>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+    <canvas id="tuto" width="600" height="400"></canvas>
+    <script>
+        var ctx, t;
+        var x = 0, y = 0;
+        function init() {
+            var canvas = document.getElementById('tuto');
+            if(canvas.getContext) {
+                ctx = canvas.getContext("2d");
+                setInterval(draw, 50);
+            } else {
+                alert("you browser doesn't support canvas drawing");
+            }
+        }
+        
+        function draw() {
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, 600, 400);
+            ctx.fillStyle = "black";
+            ctx.fillRect(x, y, 100, 60);
+            x += 5;
+        }
+        
+        init();
+    </script>
+</body>
+</html>
